@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EatX</title>
-    <link rel="stylesheet" href="/templates/main.css">
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
 
 </head>
 <body>
 
 <header>
 
-    <a class="logo"><i class="logobar"></i>EatX</a>
+    <a class="logo">EatX</a>
 
     <div id="menu-bar" class="navigation"></div>
 
     <nav class="navbar">
-        <a href="login.html">Sign In</a>
+        <a href="register">Register</a>
+        <a href="login">Sign In</a>
         <a href="#order">Order Now</a>
     </nav>
 
@@ -29,12 +30,12 @@
         <a href="#" class="btn">Zamów teraz</a>
     </div>
     <div class="image">
-        <img src="/images/home.png" alt="">
+        <img th:src="@{/images/home.png}" alt="">
     </div>
 
 </section>
 
-<script src="/templates/script.js"></script>
+<script th:href="@{/js/script.js}"></script>
 
 </body>
 </html>

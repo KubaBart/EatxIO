@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EatX</title>
-    <link rel="stylesheet" href="/templates/main.css">
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
 
 </head>
 <body>
@@ -15,23 +18,27 @@
 
 </header>
 <section class="login" id="login">
+
 <div class="content">
     <h3>Witamy</h3>
-    <p>Zaloguj się przy pomocy adresu e-mail lub numeru telefonu</p>
-    <form>
-        <input type="text" name="" placeholder="@/Number">
+    <p>Zaloguj się przy pomocy adresu e-mail</p>
+    <form th:action="@{/login}" method="post">
+        <div th:if="${param.error}" class="alert alert-error">
+            Invalid Email or password.
+        </div>
+        <input type="text" id="mail" placeholder="Email">
          <br><br>
-        <input type="password" name="" placeholder="Password">
+        <input type="password" id="password" placeholder="Password">
         <br><br>
-        <a href="#" class="btn">Zaloguj</a>
+        <button type="submit" class="btn">Zaloguj</button>
     </form>
     <br>
-    <p>Jeśli nie posiadasz konta, <font color="#00008b"><a href="#">Zarejestruj się!</a></font></p>
+    <p>Jeśli nie posiadasz konta, <font color="#00008b"><a href="register">Zarejestruj się!</a></font></p>
 
 </div>
 </section>
 
-<script src="/templates/script.js"></script>
+<script src="/static/js/script.js"></script>
 
 </body>
 </html>
