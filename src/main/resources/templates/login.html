@@ -8,6 +8,7 @@
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" th:href="@{/css/main.css}" />
+    <script src="js/script.js"></script>
 
 </head>
 <body>
@@ -24,11 +25,14 @@
     <p>Zaloguj się przy pomocy adresu e-mail</p>
     <form th:action="@{/login}" method="post">
         <div th:if="${param.error}" class="alert alert-error">
-            Invalid Email or password.
+            [[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]
         </div>
-        <input type="text" id="mail" placeholder="Email">
+        <div th:if="${param.Logout}" class="alert alert-error">
+            You have been logged out.
+        </div>
+        <input type="text" name="email" class="form-control" placeholder="E-mail" required>
          <br><br>
-        <input type="password" id="password" placeholder="Password">
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
         <br><br>
         <button type="submit" class="btn">Zaloguj</button>
     </form>
@@ -37,8 +41,6 @@
 
 </div>
 </section>
-
-<script src="/static/js/script.js"></script>
 
 </body>
 </html>

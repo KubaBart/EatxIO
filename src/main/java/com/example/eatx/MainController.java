@@ -4,6 +4,9 @@ import com.example.eatx.user.User;
 import com.example.eatx.user.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +28,19 @@ public class MainController {
         return "index";
     }
 
+    @GetMapping("/logout")
+    public String logout()
+    {
+
+        return "index";
+    }
+
+    @GetMapping("/user_page")
+    public String user_page()
+    {
+
+        return "user_page";
+    }
 
     @GetMapping("/register")
     public String register(Model model)
@@ -39,6 +55,7 @@ public class MainController {
         String encodedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
         userRepo.save(user);
-        return "user_page";
+        return "index";
     }
+
 }
