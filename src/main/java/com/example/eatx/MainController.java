@@ -35,12 +35,7 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/user_page")
-    public String user_page()
-    {
 
-        return "user_page";
-    }
 
     @GetMapping("/register")
     public String register(Model model)

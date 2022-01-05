@@ -1,8 +1,7 @@
 package com.example.eatx.products;
 
 import com.example.eatx.restaurants.Restaurants;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -10,6 +9,7 @@ import javax.persistence.*;
 @Table(name ="products")
 @Getter
 @Setter
+@EqualsAndHashCode
 public class Products {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,12 +19,18 @@ public class Products {
     private String name;
 
     @Column(nullable = false)
-    private String price;
+    private Double price;
+
+    @Column(nullable = false)
+    private int quantity;
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
     @ManyToOne
     @JoinColumn(name="restaurant_id")
     private Restaurants restaurants;
-
 
 
 }

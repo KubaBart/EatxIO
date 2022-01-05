@@ -183,6 +183,11 @@ header .navbar a:hover{
     padding-bottom: 35.5rem;
 }
 
+.login .contentForShoppingCart{
+    padding-left: 5rem;
+    padding-bottom: 35.5rem;
+}
+
 .login .image{
     flex:1 1 40rem;
 }
