@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EatX</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/restaurants.css}" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+
+</head>
+<body>
+<div class="container text-center">
+</div>
+<div class="menu">
+    <div class="restaurant-items">
+        <img th:src="@{/restaurants/hut.png}" alt="">
+        <div class="details">
+            <div class="details-sub">
+                <h5>Pizza Hut</h5>
+            </div>
+            <p>Sprawdz Nas!</p>
+            <a href="menu" class="btn">Go To Menu</a>
+        </div>
+    </div>
+
+    <div class="restaurant-items">
+        <img th:src="@{/restaurants/mc.png}" alt="">
+        <div class="details">
+            <div class="details-sub">
+                <h5>McDonald's</h5>
+            </div>
+            <p>Sprawdz Nas!</p>
+            <a href="menu" class="btn">Go To Menu</a>
+        </div>
+    </div>
+
+    <div class="restaurant-items">
+        <img th:src="@{/restaurants/kfc.png}" alt="">
+        <div class="details">
+            <div class="details-sub">
+                <h5>KFC</h5>
+            </div>
+            <p>Sprawdz Nas!</p>
+            <a href="menu" class="btn">Go To Menu</a>
+        </div>
+    </div>
+
+    <div class="restaurant-items">
+        <img th:src="@{/restaurants/tanimeksykaniec.png}" alt="">
+        <div class="details">
+            <div class="details-sub">
+                <h5>Tani Meksykaniec</h5>
+            </div>
+            <p>Sprawdz Nas!</p>
+            <a href="menu" class="btn">Go To Menu</a>
+        </div>
+    </div>
+
+    <div class="restaurant-items">
+        <img th:src="@{/restaurants/bbq.png}" alt="">
+        <div class="details">
+            <div class="details-sub">
+                <h5>BBQ</h5>
+            </div>
+            <p>Sprawdz Nas!</p>
+            <a href="menu" class="btn">Go To Menu</a>
+        </div>
+    </div>
+
+    <div class="restaurant-items">
+        <img th:src="@{/restaurants/lovekrove.png}" alt="">
+        <div class="details">
+            <div class="details-sub">
+                <h5>LoveKrove</h5>
+            </div>
+            <p>Sprawdz Nas!</p>
+            <a href="menu" class="btn">Go To Menu</a>
+        </div>
+    </div>
+</div>
+
+<script th:href="@{/js/restaurants.js}"></script>
+</body>
+</html>

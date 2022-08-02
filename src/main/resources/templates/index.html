@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EatX</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+
+
+</head>
+<body>
+
+<header>
+
+    <a class="logo">EatX</a>
+
+    <div id="menu-bar" class="navigation"></div>
+
+    <nav class="navbar">
+        <a href="register">Register</a>
+        <a href="login">Sign In</a>
+        <a href="user_page">Order Now</a>
+        <a href="shoppingCart">Shopping Cart</a>
+        <a sec:authorize="isAuthenticated()">Witamy, <span sec:authentication="principal.fullName"></span></a>
+    </nav>
+
+</header>
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3>Najszybsza dostawa w Polsce!</h3>
+        <a href="user_page" class="btn">Zamów teraz</a>
+    </div>
+    <div class="image">
+        <img th:src="@{/images/home.png}" alt="">
+    </div>
+
+</section>
+
+<script th:href="@{/js/script.js}"></script>
+
+</body>
+</html>

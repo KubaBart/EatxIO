@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EatX</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/restaurants.css}" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+
+</head>
+
+<header>
+    <a class="logo"><i class="logobar"></i>EatX</a>
+</header>
+
+<body>
+<section class="login" id="login">
+<div class="contentForShoppingCart"><h3>Your shopping Cart:</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th class="text-center">Product</th>
+            <th class="text-center">Quantity</th>
+            <th class="text-center">Total Price</th>
+            <th class="text-center"><a
+                    class="btn btn-sm btn-outline-danger clear"
+                    th:href="@{/clearShoppingCart}">Clear </a></th>
+        </thead>
+        <tbody>
+        <tr th:each="cartItem : ${shoppingCart}">
+            <td>
+                <div class="product-item">
+                    <div class="product-info">
+                        <h4 class="product-title">
+                            <a href="#">[[${cartItem.product.name}]]</a>
+                        </h4>
+                        <span><em>Price:</em>$[[${cartItem.product.price}]]
+																		</span>
+
+                    </div>
+                </div>
+            </td>
+    </table>
+    <button type="submit" class="btn">Zatwierdz Zamowienie</button>
+</div>
+</section>
+
+<script th:href="@{/js/restaurants.js}"></script>
+</body>
+</html>
